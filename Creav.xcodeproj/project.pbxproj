@@ -14,6 +14,7 @@
 		61E92B0E1F4FA1C300AAE8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61E92B0D1F4FA1C300AAE8EC /* Assets.xcassets */; };
 		61E92B111F4FA1C300AAE8EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61E92B0F1F4FA1C300AAE8EC /* LaunchScreen.storyboard */; };
 		61E92B191F4FA28500AAE8EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61E92B181F4FA28500AAE8EC /* GoogleService-Info.plist */; };
+		61E92B1B1F4FA6A800AAE8EC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E92B1A1F4FA6A800AAE8EC /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		61E92B101F4FA1C300AAE8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61E92B121F4FA1C300AAE8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61E92B181F4FA28500AAE8EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		61E92B1A1F4FA6A800AAE8EC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				61E92B061F4FA1C300AAE8EC /* AppDelegate.swift */,
 				61E92B081F4FA1C300AAE8EC /* ViewController.swift */,
+				61E92B1A1F4FA6A800AAE8EC /* SignUpViewController.swift */,
 				61E92B0A1F4FA1C300AAE8EC /* Main.storyboard */,
 				61E92B0D1F4FA1C300AAE8EC /* Assets.xcassets */,
 				61E92B0F1F4FA1C300AAE8EC /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E92B1B1F4FA6A800AAE8EC /* SignUpViewController.swift in Sources */,
 				61E92B091F4FA1C300AAE8EC /* ViewController.swift in Sources */,
 				61E92B071F4FA1C300AAE8EC /* AppDelegate.swift in Sources */,
 			);
@@ -381,6 +385,7 @@
 				61E92B171F4FA1C300AAE8EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
