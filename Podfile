@@ -8,5 +8,7 @@ target 'Creav' do
   # Pods for Creav
 pod ‘Firebase/Core’
 pod ‘Firebase/Auth’
+pod ‘Firebase/Storage’
+pod ‘Firebase/Database’
 
 end

@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+import FirebaseStorage
 
 class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -19,13 +21,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var nxtBtn: UIButton!
     
     let picker = UIImagePickerController()
+    var userStorage: FIRStorageReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         picker.delegate = self
+        
+        let storage = FIRStorage.storage().reference(forURL: "gs://creav-e473e.appspot.com")
 
-        // Do any additional setup after loading the view.
+        userStorage = storage.child("users")
     }
 
     @IBAction func selectImgPressed(_ sender: Any) {
@@ -49,7 +54,26 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         guard nameField.text != "", emailField.text != "", passwordField.text != "", comPwField.text != "" else { return}
         
         if passwordField.text == comPwField.text {
-            FIRAuth.auth()?.create
+            
+            FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                if let user = user {
+                    
+                    let imageRef = self.userStorage.child("\(user.uid).jpg")
+                    
+                    let data = UIImageJPEGRepresentation(self.imageView.image!, 0.5)
+                    
+                    let uploadTask = imageRef.put(data, metadata: nil, completion: { (metadata, err) in
+                        if err != nil {
+                            print(err!.localizedDescription)
+                        }
+                    })
+                    
+                }
+            })
+            
         } else {
             print("The Password does not match!")
         }
